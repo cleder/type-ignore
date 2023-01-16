@@ -17,7 +17,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-rick-portal-gun = "type_ignore.main:cli"
+type-ignore = "type_ignore.main:cli"
 
 [tool.mypy]
 disallow_any_generics = true
