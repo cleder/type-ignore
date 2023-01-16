@@ -1,18 +1,14 @@
 #!/usr/bin/env python
 """
-Remove all unused type ignores from source files.
-
-Usage:
-    remove_unused_type_ignores.py remove FILENAME
-    or read errors from STDIN.
+Remove unused type ignores from source files or add them if necessary.
 
 Example:
-    mypy fastkml | python remove_unused_type_ignores.py remove
+    mypy type_ignore | type-ignore remove
 
     or
 
-    mypy fastkml > errors.txt
-    python remove_unused_type_ignores.py --error-file errors.txt
+    mypy type_ignore > errors.txt
+    type_ignore  remove --error-file errors.txt
 """
 import re
 import sys
