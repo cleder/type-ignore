@@ -1,10 +1,8 @@
 # type-ignore
 Add `# type: ignore [error_code]` and remove unused `#type: ignore`s
 
-When you refactor code to use type annotations you may have to add some
-`# type: ignore [error-code]` comments to let `mypy` pass.
-When you further refine your annotations some of these lines may become valid
-and the `# type: ignore` comments have to be removed.
+When you refactor code to use type annotations you cannot fix every violations at one and you add `# type: ignore [error-code]` comments to let `mypy` pass.
+When you further refine your annotations some of these lines may become valid and the `# type: ignore` comments have to be removed.
 With `type-ignore` it is possible to automate this process.
 
 # Usage
@@ -35,3 +33,13 @@ enable_error_code = [
     "ignore-without-code"
 ]
 ```
+
+# Alternatives
+
+At the time I wrote this I could not find a tool to add and remove type ignore comments, only after I published this on GitHub I found out that I reinvented the wheel.
+
+- [mypy-silent](https://github.com/whtsky/mypy-silent) - Automatically add or remove `# type: ignore` comments to silence mypy. Inspired by `pylint-silent`.
+- [mypy_clean_slate](https://github.com/geo7/mypy_clean_slate) - CLI tool for providing a clean slate for mypy usage within a project.
+
+Another tool that tries solve the same problem, but with a different approach and many more features is:
+- [mypy-baseline](https://github.com/orsinium-labs/mypy-baseline) - A CLI tool for painless integration of mypy with an existing Python project. When you run it for the first time, it will remember all type errors that you already have in the project (generate "baseline"). All consecutive runs will ignore these errors and report only ones that you introduced after that.
