@@ -1,7 +1,7 @@
 # type-ignore
 Add `# type: ignore [error_code]` and remove unused `#type: ignore`s
 
-When you refactor code to use type annotations you cannot fix every violations at one and you add `# type: ignore [error-code]` comments to let `mypy` pass.
+When you refactor code to use type annotations you cannot fix every violations at once you can add `# type: ignore [error-code]` comments to let `mypy` pass.
 When you further refine your annotations some of these lines may become valid and the `# type: ignore` comments have to be removed.
 With `type-ignore` it is possible to automate this process.
 
@@ -44,3 +44,5 @@ At the time I wrote this I could not find a tool to add and remove type ignore c
 
 Another tool that tries solve the same problem, but with a different approach and many more features is:
 - [mypy-baseline](https://github.com/orsinium-labs/mypy-baseline) - A CLI tool for painless integration of mypy with an existing Python project. When you run it for the first time, it will remember all type errors that you already have in the project (generate "baseline"). All consecutive runs will ignore these errors and report only ones that you introduced after that.
+
+Check out the [Awesome Python Typing](https://github.com/typeddjango/awesome-python-typing#working-with-types) [![Awesome](https://awesome.re/badge-flat2.svg)](https://awesome.re) list.
