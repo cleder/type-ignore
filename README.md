@@ -16,10 +16,11 @@ mypy type_ignore | type-ignore remove --dry-run
 or you can use a file to read the error information from
 ```
 mypy type_ignore > errors.txt
-type_ignore add --error-file errors.txt --dry-run
+type_ignore add --error-file=mypy_error_report.txt --dry-run
 ```
 
-Always `git commit` before running this tool.
+The `--dry-run` flag lets you see what would be changed without modifying your code.
+Files are modified in place, **it is strongly recommended to `git commit` before running this tool**.
 
 # Mypy configuration
 
@@ -36,7 +37,7 @@ enable_error_code = [
 
 # Alternatives
 
-At the time I wrote this I could not find a tool to add and remove type ignore comments, only after I published this on GitHub I found out that I reinvented the wheel.
+At the time I wrote this I could not find a tool to add and remove type ignore comments, only after I published this on GitHub :octocat: I found out that I reinvented the wheel 🤦️.
 
 - [mypy-silent](https://github.com/whtsky/mypy-silent) - Automatically add or remove `# type: ignore` comments to silence mypy. Inspired by `pylint-silent`.
 - [mypy_clean_slate](https://github.com/geo7/mypy_clean_slate) - CLI tool for providing a clean slate for mypy usage within a project.
